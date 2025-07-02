@@ -1,341 +1,190 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Ravens | AI-Powered Clinical Intelligence</title>
+    <title>Data Ravens – AI‑Native Practice OS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1A1A1A;
-            color: #F0F0F0;
-        }
-        .palette-comment { display: none; }
-        .energetic-red { color: #FF6B6B; }
-        .energetic-teal { color: #4ECDC4; }
-        .energetic-blue { color: #45B7D1; }
-        .energetic-yellow { color: #F7B801; }
-        .bg-energetic-dark { background-color: #1A1A1A; }
-        .bg-energetic-card { background-color: #2D2D2D; }
-        .border-energetic-yellow { border-color: #F7B801; }
-
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 150px;
-            max-height: 180px;
-        }
-
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 180px;
-            }
-        }
-        
-        .section-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-            letter-spacing: -0.025em;
-            line-height: 1.1;
-        }
-        
-        .section-subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
-            color: #A0A0A0;
-            margin-top: 1rem;
-            max-width: 60rem;
-        }
-        
-        .material-card {
-            background-color: #2D2D2D;
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        
-        .material-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
-        }
-
-        @media print {
-            html, body {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            .material-card, .page-break-avoid {
-                break-inside: avoid;
-            }
-             body {
-                background-color: #1A1A1A !important;
-            }
-        }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gradient-text { background: -webkit-linear-gradient(45deg, #10B981, #059669); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .section { padding: 4rem 1rem; }
+        @media (min-width: 768px) { .section { padding: 6rem 2rem; } }
     </style>
 </head>
-<body class="bg-energetic-dark">
+<body class="bg-white text-gray-800">
 
-    <div class="palette-comment">
-        Chosen Palette: Energetic & Playful
-        #FF6B6B (red), #4ECDC4 (teal), #45B7D1 (blue), #F7B801 (yellow), #F0F0F0 (light gray), #1A1A1A (dark gray)
-        
-        Narrative Structure Plan:
-        1.  Hook/Intro: Introduce Data Ravens and the core value proposition.
-        2.  The Problem: Quantify the time crisis in consultations using big numbers and a comparative chart.
-        3.  The Solution: Detail the 3-step workflow (Converse, Analyse, Integrate) in a clear flowchart.
-        4.  Golden Use Case: Showcase the actual output of the AI summary to make the solution tangible.
-        5.  The Benefits: Detail the value proposition for both clinicians and patients.
-        6.  Market Opportunity & GTM: Present the target markets and the phased roll-out strategy.
-        7.  Conclusion/CTA: A final call to action.
-        
-        Visualization Choices:
-        - Data Point: Consultation Time Breakdown. Goal: Compare. Chosen Visualization: Stacked Bar Chart. Justification: Best way to show composition and the dramatic shift in time allocation. Library: Chart.js (Canvas). NO SVG.
-        - Data Point: Solution Workflow. Goal: Organize. Chosen Visualization: Flow Chart. Justification: Clearly illustrates a process. Method: HTML/CSS with Tailwind Flexbox. NO SVG.
-        - Data Point: GTM Strategy. Goal: Organize. Chosen Visualization: Timeline/Flow Chart. Justification: Shows a phased progression over time. Method: HTML/CSS with Tailwind Grid/Flexbox. NO SVG.
-        
-        NO SVG or Mermaid JS were used in this document. All diagrams are implemented with HTML/CSS and all charts with Chart.js on Canvas.
-    </div>
-    
-    <main class="container mx-auto p-4 md:p-8">
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                <h1 class="text-xl font-bold text-gray-900">Data Ravens</h1>
+            </div>
+            <a href="#cta" class="hidden sm:inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow">Become a Design Partner</a>
+        </nav>
+    </header>
 
-        <header class="text-center py-16 page-break-avoid">
-            <h1 class="text-5xl md:text-7xl font-black energetic-yellow tracking-tighter">DATA RAVENS</h1>
-            <p class="section-subtitle mx-auto">Giving practitioners back their most valuable asset: time to care.</p>
-        </header>
-
-        <section id="problem" class="my-24 md:my-32 text-center page-break-avoid">
-            <h2 class="section-title">The Problem: Doctor Shortage </h2>
-            <p class="section-subtitle mx-auto">The pressure for doctors to gather complex patient histories and comprehend symptoms within very short appointments leads to clinician burnout and risks compromising patient care.</p>
-            <div class="grid md:grid-cols-2 gap-8 mt-12 items-center">
-                <div class="material-card text-center">
-                    <p class="text-7xl md:text-8xl font-black energetic-red">60%</p>
-                    <p class="mt-4 text-xl font-semibold text-gray-200">Time Spent on Data Gathering</p>
-                    <p class="mt-2 text-gray-400">Up to 60% of a standard 10-minute GP appointment is consumed by history-taking and administrative tasks, not clinical reasoning.</p>
-                </div>
-                <div class="material-card">
-                    <h3 class="text-xl font-bold text-center mb-4">The Impact on a 10-Minute Consultation</h3>
-                    <div class="space-y-6">
-                        <div>
-                             <p class="font-semibold text-gray-300 mb-2">Before Data Ravens</p>
-                            <div class="chart-container">
-                                <canvas id="beforeChart"></canvas>
-                            </div>
-                        </div>
-                        <div>
-                             <p class="font-semibold text-gray-300 mb-2">After Data Ravens</p>
-                            <div class="chart-container">
-                                <canvas id="afterChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Hero Section -->
+    <main>
+        <section class="section text-center bg-gray-900 text-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-6xl font-extrabold leading-tight">Your Clinic, Fully Automated.</h2>
+                <h2 class="text-4xl md:text-6xl font-extrabold gradient-text leading-tight mt-2">Staffed by Specialised AI Agents.</h2>
+                <p class="mt-6 max-w-3xl mx-auto text-lg text-gray-300">Data Ravens is a single, AI-driven system that enables clinicians and practice leaders to focus on what matters most: their patients.</p>
+                <div class="mt-8">
+                    <a href="#cta" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-xl">Join the Pilot Programme</a>
                 </div>
             </div>
         </section>
 
-        <section id="solution" class="my-24 md:my-32 text-center page-break-avoid">
-            <h2 class="section-title">The Solution: Intelligent Automation</h2>
-            <p class="section-subtitle mx-auto">Data Ravens provides a secure, AI-powered conversational platform that automates patient history-taking, delivering a concise, clinically-relevant summary directly into the workflow.</p>
-            <div class="mt-12 grid md:grid-cols-3 gap-8">
-                <div class="material-card text-center">
-                    <div class="mx-auto w-16 h-16 rounded-full bg-energetic-dark flex items-center justify-center energetic-teal text-3xl font-black">1</div>
-                    <h3 class="text-2xl font-bold mt-4">Converse</h3>
-                    <p class="mt-2 text-gray-400">Patients receive a secure SMS link to have an in-depth, empathetic conversation with our AI, at their own convenience.</p>
+        <!-- The Three Pillars -->
+        <section class="section bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h3 class="text-3xl font-bold text-gray-900">The Three Pillars of an Automated Practice</h3>
+                    <p class="mt-4 max-w-2xl mx-auto text-gray-600">Our platform is built on three interconnected pillars, each powered by AI agents you can instruct and manage.</p>
                 </div>
-                <div class="material-card text-center">
-                    <div class="mx-auto w-16 h-16 rounded-full bg-energetic-dark flex items-center justify-center energetic-blue text-3xl font-black">2</div>
-                    <h3 class="text-2xl font-bold mt-4">Analyse</h3>
-                    <p class="mt-2 text-gray-400">Our platform intelligently structures the dialogue into a clinical summary, highlighting key symptoms, timelines, and red flags.</p>
-                </div>
-                <div class="material-card text-center">
-                    <div class="mx-auto w-16 h-16 rounded-full bg-energetic-dark flex items-center justify-center energetic-yellow text-3xl font-black">3</div>
-                    <h3 class="text-2xl font-bold mt-4">Integrate</h3>
-                    <p class="mt-2 text-gray-400">The summary appears seamlessly in the clinician's EHR before the appointment. No extra logins required.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="use-case" class="my-24 md:my-32 text-center page-break-avoid">
-            <h2 class="section-title">The Golden Use Case: From Chaos to Clarity</h2>
-            <p class="section-subtitle mx-auto">Our AI transforms a patient’s complex story into a powerful clinical asset, perfectly preparing the clinician for a high-value appointment.</p>
-            <div class="mt-12 material-card text-left p-6 md:p-8 border-2 border-energetic-yellow">
-                 <h3 class="text-xl md:text-2xl font-bold energetic-yellow">AI Pre-Consultation Summary</h3>
-                <p class="text-gray-400 mt-1">Patient: Sarah, 48</p>
-                <div class="mt-6 grid md:grid-cols-5 gap-6">
-                    <div class="md:col-span-3">
-                        <h4 class="font-bold text-gray-200">Chief Complaint:</h4>
-                        <p class="text-gray-300">Persistent fatigue, intermittent dizziness, and cognitive difficulties ("brain fog") impacting work performance over the last 6-8 months.</p>
-                        
-                        <h4 class="font-bold text-gray-200 mt-4">History of Presenting Complaint:</h4>
-                        <ul class="list-disc pl-5 text-gray-300">
-                            <li><strong class="text-gray-100">Fatigue:</strong> Constant, rated 7/10. Not improved by rest.</li>
-                            <li><strong class="text-gray-100">Cognitive Fog:</strong> Difficulty with concentration and word-finding.</li>
-                        </ul>
-
-                        <h4 class="font-bold text-gray-200 mt-4">Key Positive & Negative Symptoms:</h4>
-                         <ul class="list-disc pl-5">
-                            <li><span class="font-bold energetic-teal">POSITIVE:</span> Reports significant sleep disturbance, night sweats, increased anxiety, and irregular menstrual cycle.</li>
-                            <li><span class="font-bold energetic-red">NEGATIVE:</span> No chest pain, shortness of breath, significant weight change, or focal neurological weakness.</li>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Pillar 1: Augmented Care -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 flex flex-col">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                            </div>
+                            <h4 class="font-bold text-xl">Augmented Care</h4>
+                        </div>
+                        <p class="mt-4 text-gray-600 flex-grow">AI that supports clinical quality and documentation around the consultation.</p>
+                        <ul class="mt-6 space-y-4 text-gray-700">
+                            <li class="flex items-start"><span class="text-blue-500 mr-3 mt-1 leading-none font-bold">▶</span><div><strong>Intake Agent (Coming Soon):</strong> Conducts adaptive patient history across specialities.</div></li>
+                            <li class="flex items-start"><span class="text-blue-500 mr-3 mt-1 leading-none font-bold">▶</span><div><strong>Letter Drafter:</strong> Instantly drafts referral and follow‑up letters for sign‑off.</div></li>
+                            <li class="flex items-start"><span class="text-blue-500 mr-3 mt-1 leading-none font-bold">▶</span><div><strong>Scribe (Future):</strong> Listens to live consultations and drafts structured notes.</div></li>
                         </ul>
                     </div>
-                     <div class="md:col-span-2 bg-energetic-dark p-4 rounded-lg">
-                        <h4 class="font-bold energetic-yellow">AI Insight & Recommendations (Post Class IIa)</h4>
-                         <p class="text-gray-300 mt-2">Symptom constellation highly suggestive of a <strong class="text-white">perimenopausal state.</strong></p>
-                         <p class="text-gray-300 mt-4">Recommend baseline bloods to rule out other causes of fatigue:</p>
-                         <ul class="list-disc pl-5 text-gray-300 mt-2">
-                            <li>Full Blood Count (anemia)</li>
-                            <li>Thyroid Function (hypothyroidism)</li>
-                         </ul>
+                    <!-- Pillar 2: Admin Agents -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 flex flex-col">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-green-100 text-green-600 p-3 rounded-full">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h4 class="font-bold text-xl">Admin Agents</h4>
+                        </div>
+                        <p class="mt-4 text-gray-600 flex-grow">Removing day‑to‑day operational grunt work.</p>
+                        <ul class="mt-6 space-y-4 text-gray-700">
+                            <li class="flex items-start"><span class="text-green-500 mr-3 mt-1 leading-none font-bold">▶</span><div><strong>Reception Agent:</strong> Handles booking, cancellations, and FAQs via phone or chat.</div></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-3 mt-1 leading-none font-bold">▶</span><div><strong>Collections Agent:</strong> Automates invoicing and payment reminders end‑to‑end.</div></li>
+                            <li class="flex items-start"><span class="text-green-500 mr-3 mt-1 leading-none font-bold">▶</span><div><strong>Practice Manager Agent:</strong> Fills cancellations, prevents roster clashes, and re‑orders supplies.</div></li>
+                        </ul>
+                    </div>
+                    <!-- Pillar 3: Practice Intelligence -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200 flex flex-col">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-purple-100 text-purple-600 p-3 rounded-full">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                            </div>
+                            <h4 class="font-bold text-xl">Practice Intelligence</h4>
+                        </div>
+                        <p class="mt-4 text-gray-600 flex-grow">Data‑driven insights and automation loops for growth.</p>
+                        <ul class="mt-6 space-y-4 text-gray-700">
+                            <li class="flex items-start"><span class="text-purple-500 mr-3 mt-1 leading-none font-bold">▶</span><div><strong>Conversational BI Agent:</strong> Ask questions in plain language and get instant answers.</div></li>
+                            <li class="flex items-start"><span class="text-purple-500 mr-3 mt-1 leading-none font-bold">▶</span><div><strong>Rota Balancer Agent:</strong> Automates staff scheduling to match demand and preferences.</div></li>
+                            <li class="flex items-start"><span class="text-purple-500 mr-3 mt-1 leading-none font-bold">▶</span><div><strong>Owner Dashboard:</strong> Surfaces live KPIs and actionable insights.</div></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="market" class="my-24 md:my-32 text-center page-break-avoid">
-            <h2 class="section-title">Go-to-Market Strategy</h2>
-            <p class="section-subtitle mx-auto">A phased approach focusing on agile, high-need markets to build momentum for system-wide change.</p>
-            <div class="mt-12 grid md:grid-cols-3 gap-4">
-                 <div class="material-card">
-                    <p class="text-lg font-bold energetic-teal">Phase 1: Beachhead</p>
-                    <p class="text-2xl font-extrabold mt-2">Specialist Private Clinics</p>
-                    <p class="text-gray-400 mt-2">(e.g., Menopause, Women's Health) where need is acute and decision-making is fast.</p>
-                </div>
-                <div class="material-card">
-                    <p class="text-lg font-bold energetic-blue">Phase 2: Expansion</p>
-                    <p class="text-2xl font-extrabold mt-2">Wider Private Market</p>
-                    <p class="text-gray-400 mt-2">(Neurology, Gastroenterology) while building out our library of EHR integrations.</p>
-                </div>
-                 <div class="material-card">
-                    <p class="text-lg font-bold energetic-red">Phase 3: Endgame</p>
-                    <p class="text-2xl font-extrabold mt-2">NHS General Practice</p>
-                    <p class="text-gray-400 mt-2">From a position of strength, begin deploying into the NHS to drive system-wide change.</p>
+        <!-- Command Centre Section -->
+        <section class="section bg-gray-800 text-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold">Command Centre — <span class="gradient-text">Type it. Done.</span></h3>
+                        <p class="mt-4 text-gray-300">The entire platform is drivable from a single, intelligent command bar. Think J.A.R.V.I.S. for your clinic—manage everything at the speed of thought.</p>
+                        <p class="mt-4 text-gray-400">Built on an event‑driven core, so every command is instant, auditable, and reversible.</p>
+                    </div>
+                    <div class="bg-gray-900 p-4 rounded-lg font-mono text-sm text-gray-300 shadow-2xl">
+                        <div class="flex items-center space-x-2 p-2 border-b border-gray-700">
+                            <span class="text-blue-400">⌘K</span>
+                            <span class="text-gray-400">></span>
+                            <span class="animate-pulse">|</span>
+                        </div>
+                        <div class="p-4 space-y-2">
+                            <p class="text-white bg-gray-700 p-2 rounded">move evelyn reed to tomorrow at 10 am</p>
+                            <p class="text-gray-500">run collections for all overdue invoices</p>
+                            <p class="text-gray-500">show me last month's revenue</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <footer class="text-center py-16">
-            <h2 class="text-4xl font-bold">Would you like to learn about our ongoing MVP development, regulatory strategy and more??</h2>
-            <a href="mailto:seth@dataravens.io" class="mt-8 inline-block bg-energetic-yellow text-energetic-dark text-xl font-bold py-4 px-10 rounded-lg transition-transform hover:scale-105">Contact the Founder</a>
-        </footer>
+        <!-- One Platform, Four Experiences -->
+        <section class="section bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-3xl font-bold text-gray-900">One Platform, Four Experiences</h3>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">The clinic ecosystem operates through a single system, with tailored interfaces for each role.</p>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="bg-gray-100 rounded-lg p-6 h-full">
+                            <h5 class="font-bold">The Clinician</h5>
+                            <p class="text-sm text-gray-600 mt-2">Focuses purely on clinical reasoning, as the AI handles pre-appointment questioning, documentation, and letter drafting—all with your final sign-off.</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gray-100 rounded-lg p-6 h-full">
+                            <h5 class="font-bold">The Admin</h5>
+                            <p class="text-sm text-gray-600 mt-2">Partners with AI to approve schedules, resolve invoice queries, and deliver responsive patient care.</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gray-100 rounded-lg p-6 h-full">
+                            <h5 class="font-bold">The Owner</h5>
+                            <p class="text-sm text-gray-600 mt-2">Monitors live dashboards and uses the Command Centre to make strategic moves in seconds.</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gray-100 rounded-lg p-6 h-full">
+                            <h5 class="font-bold">The Patient</h5>
+                            <p class="text-sm text-gray-600 mt-2">Engages in a seamless, empathetic intake conversation on their phone's browser—no app required. They feel heard and prepared before they even arrive.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Final Vision -->
+        <section class="section bg-gray-900 text-white">
+            <div class="container mx-auto px-6 text-center">
+                 <h3 class="text-3xl font-bold">The End of the Digital Filing Cabinet.</h3>
+                 <p class="mt-4 max-w-2xl mx-auto text-gray-300">Data Ravens isn't just a better PMS. It's a new category of software—a true operational partner that gives clinicians back their time and practice owners back their peace of mind. The future of practice management isn't just digital; it's intelligent.</p>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="cta" class="section bg-blue-700 text-white">
+            <div class="container mx-auto px-6 text-center">
+                 <h3 class="text-3xl font-bold">Become a Foundational Partner</h3>
+                 <p class="mt-4 max-w-2xl mx-auto text-blue-100">We are recruiting 3-5 innovative UK clinics to join our pilot programme. Help us shape the future of practice management and receive exclusive benefits.</p>
+                 <div class="mt-8 bg-white/90 text-gray-900 rounded-xl p-8 max-w-lg mx-auto shadow-2xl">
+                    <h4 class="font-bold text-xl">The Design Partner Offer</h4>
+                    <ul class="mt-4 text-left space-y-3">
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✓</span><div><span class="font-semibold">3-Month Pilot Access</span><br>Get the full AI Admin PMS for a nominal fee of £49/month.</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✓</span><div><span class="font-semibold">50% Lifetime Discount</span><br>Lock in a permanent discount on all future plans as a thank you.</div></li>
+                        <li class="flex items-start"><span class="text-green-500 mr-3 mt-1">✓</span><div><span class="font-semibold">Shape the Product</span><br>Your direct feedback will guide our roadmap and development priorities.</div></li>
+                    </ul>
+                     <div class="mt-8">
+                        <a href="mailto:seth@dataravens.io" class="bg-gray-800 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-900 transition-colors w-full block">Contact Us to Apply</a>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
     </main>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        
-        function wrapLabel(label) {
-            const maxLength = 16;
-            if (typeof label !== 'string' || label.length <= maxLength) {
-                return label;
-            }
-            const words = label.split(' ');
-            const lines = [];
-            let currentLine = '';
-            words.forEach(word => {
-                if ((currentLine + ' ' + word).length > maxLength) {
-                    lines.push(currentLine);
-                    currentLine = word;
-                } else {
-                    currentLine = currentLine ? currentLine + ' ' + word : word;
-                }
-            });
-            lines.push(currentLine);
-            return lines;
-        }
-
-        const pluginConfig = {
-            plugins: {
-                tooltip: {
-                    callbacks: {
-                        title: function(tooltipItems) {
-                            const item = tooltipItems[0];
-                            let label = item.chart.data.labels[item.dataIndex];
-                            if (Array.isArray(label)) {
-                              return label.join(' ');
-                            }
-                            return label;
-                        }
-                    }
-                },
-                legend: {
-                    display: true,
-                    position: 'bottom',
-                    labels: {
-                        color: '#F0F0F0',
-                        font: {
-                            size: 14
-                        },
-                        boxWidth: 20,
-                        padding: 20
-                    }
-                }
-            }
-        };
-
-        const chartOptions = {
-            indexAxis: 'y',
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                x: {
-                    stacked: true,
-                    display: false,
-                    grid: { display: false },
-                    ticks: { display: false }
-                },
-                y: {
-                    stacked: true,
-                    display: false,
-                    grid: { display: false },
-                    ticks: { display: false }
-                }
-            },
-            ...pluginConfig
-        };
-
-        const beforeChartCtx = document.getElementById('beforeChart').getContext('2d');
-        new Chart(beforeChartCtx, {
-            type: 'bar',
-            data: {
-                labels: [''],
-                datasets: [{
-                    label: 'Admin & History',
-                    data: [60],
-                    backgroundColor: '#FF6B6B',
-                }, {
-                    label: 'Patient Care',
-                    data: [40],
-                    backgroundColor: '#4ECDC4',
-                }]
-            },
-            options: chartOptions,
-        });
-
-        const afterChartCtx = document.getElementById('afterChart').getContext('2d');
-        new Chart(afterChartCtx, {
-            type: 'bar',
-            data: {
-                 labels: [''],
-                datasets: [{
-                    label: 'Review',
-                    data: [10],
-                    backgroundColor: '#F7B801',
-                }, {
-                    label: 'Enhanced Patient Care',
-                    data: [90],
-                    backgroundColor: '#4ECDC4',
-                }]
-            },
-            options: chartOptions,
-        });
-    });
-</script>
 
 </body>
 </html>
