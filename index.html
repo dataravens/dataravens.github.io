@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Ravens - Product Vision</title>
+    <title>Data Ravens - The AI-Native Practice OS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,24 +12,12 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0D1117;
+            color: #e6edf3;
         }
         .glass-panel {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            background: rgba(33, 38, 45, 0.5);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.7;
-                transform: scale(1.02);
-            }
         }
         .fade-in {
             animation: fadeIn 1s ease-in-out forwards;
@@ -43,201 +31,215 @@
         .delay-2 { animation-delay: 0.4s; }
         .delay-3 { animation-delay: 0.6s; }
         .delay-4 { animation-delay: 0.8s; }
-        .delay-5 { animation-delay: 1s; }
+        .delay-5 { animation-delay: 1.0s; }
         .delay-6 { animation-delay: 1.2s; }
         .delay-7 { animation-delay: 1.4s; }
         .delay-8 { animation-delay: 1.6s; }
         .delay-9 { animation-delay: 1.8s; }
         .delay-10 { animation-delay: 2.0s; }
         .delay-11 { animation-delay: 2.2s; }
-        .arrow-path {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: draw 3s ease-in-out forwards 1.2s;
+        .delay-12 { animation-delay: 2.4s; }
+        .pulse {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
-        @keyframes draw {
-            to {
-                stroke-dashoffset: 0;
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.3);
+            }
+            70% {
+                box-shadow: 0 0 0 30px rgba(34, 211, 238, 0);
             }
         }
     </style>
 </head>
-<body class="text-gray-200 p-4 sm:p-6 md:p-8">
+<body class="p-4 sm:p-6 md:p-8">
     <div class="max-w-7xl mx-auto">
 
         <!-- Header -->
-        <header class="text-center mb-12 md:mb-16 fade-in">
+        <header class="text-center mb-12 md:mb-20 fade-in">
+            <div class="flex justify-center items-center gap-2 mb-6">
+                <p class="text-gray-500 text-sm">Supported by</p>
+                <img src="UCL Endorsement Logo.png" alt="UCL Endorsement Logo" class="h-20" style="filter: invert(1) brightness(1.5);" onerror="this.onerror=null;this.src='https://placehold.co/240x80/0D1117/FFFFFF?text=UCL';">
+            </div>
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight">
-                Data Ravens: Your Practice, <span class="text-cyan-400">Automated</span>.
+                Data Ravens: The <span class="text-cyan-400">AI-Native</span> Practice OS.
             </h1>
+            <p class="mt-4 text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto">
+                Moving from a passive "filing cabinet" to an active operating system staffed by a fleet of digital coworkers.
+            </p>
         </header>
 
-        <!-- Core Benefit Section -->
-        <section class="mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-            <div class="glass-panel p-6 rounded-xl border-cyan-500/20 fade-in delay-1">
-                <div class="flex items-center">
-                    <div class="bg-cyan-900/50 h-10 w-10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-white text-lg">AI-First Foundation</h3>
-                        <p class="text-gray-400 text-sm">Our event-driven core ensures all parts of your practice are always in sync, eliminating data silos.</p>
-                    </div>
+        <!-- AI-Native Core -->
+        <section class="mb-12 md:mb-20 fade-in delay-1">
+            <div class="relative w-full max-w-xl mx-auto">
+                <div class="absolute inset-0 bg-cyan-500/10 rounded-full blur-3xl -z-10"></div>
+                <div class="relative glass-panel rounded-full aspect-square flex flex-col items-center justify-center text-center p-8 shadow-2xl pulse">
+                    <h2 class="text-3xl font-bold text-white">AI-Native Core</h2>
+                    <p class="text-cyan-300 font-semibold mt-1">Event-Driven Architecture</p>
+                    <p class="text-gray-400 mt-6 text-base max-w-md">
+                        Our foundation is a **Live Activity Feed**. Every booking, payment, and note is broadcast as a secure event, allowing our AI agents to work together in perfect sync across your entire practice.
+                    </p>
                 </div>
             </div>
-            <div class="glass-panel p-6 rounded-xl border-cyan-500/20 fade-in delay-2">
-                <div class="flex items-center">
-                    <div class="bg-cyan-900/50 h-10 w-10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.3.1-3.2z"/><path d="m15 5 3.3 3.3c.79.79.79 2.07 0 2.86L19.5 10l-4.5 4.5-1.8-1.8c-.9-.9-2.36-.8-3.2.1-1.26 1.5-5 2-5 2s.5-3.74 2-5c.8-.71 2.3-.7 3.2.1l1.8 1.8L15 5z"/></svg>
+        </section>
+
+        <!-- Golden Usecases Section -->
+        <section class="mb-12 md:mb-20 fade-in delay-2">
+            <h2 class="text-center text-3xl font-bold text-white mb-12">One Command Replaces an Entire Workflow</h2>
+            <div class="space-y-10">
+                <!-- Practice Manager -->
+                <div class="glass-panel p-6 rounded-xl">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-cyan-900/50 h-12 w-12 rounded-full flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                        <h3 class="font-semibold text-white text-xl">For Practice Managers</h3>
                     </div>
-                    <div>
-                        <h3 class="font-semibold text-white text-lg">Unmatched Agility</h3>
-                        <p class="text-gray-400 text-sm">Need a new workflow automated? We can deploy new AI agents in days, not quarters, to solve your unique challenges.</p>
+                    <p class="text-gray-400 mb-4">Handle complex scheduling and billing across multiple systems in seconds.</p>
+                    <div class="bg-gray-900/50 rounded-lg p-3 shadow-inner border border-gray-700">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="text-sm text-gray-400 bg-gray-800/50 px-2 py-1 rounded-md border border-gray-700">⌘K</div>
+                            <p class="text-sm text-gray-300 flex-grow font-mono">Move Mrs. Ali to Tue 10am, bill Bupa, and send her the new parking instructions.</p>
+                        </div>
+                        <div class="border-t border-gray-700 pt-3 text-sm text-gray-400 space-y-1">
+                            <p><span class="text-green-400">✅</span> Slot moved in diary</p>
+                            <p><span class="text-green-400">✅</span> Fee rules checked with Bupa</p>
+                            <p><span class="text-green-400">✅</span> Invoice created in Xero</p>
+                            <p><span class="text-green-400">✅</span> SMS confirmation sent to patient</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clinician -->
+                <div class="glass-panel p-6 rounded-xl">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="bg-cyan-900/50 h-12 w-12 rounded-full flex items-center justify-center flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><path d="M11 11L2 22"/></svg></div>
+                        <h3 class="font-semibold text-white text-xl">For Clinicians</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Eliminate 'evening admin' by chaining clinical and administrative tasks together.</p>
+                    <div class="bg-gray-900/50 rounded-lg p-3 shadow-inner border border-gray-700">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="text-sm text-gray-400 bg-gray-800/50 px-2 py-1 rounded-md border border-gray-700">⌘K</div>
+                            <p class="text-sm text-gray-300 flex-grow font-mono">Scribe summary, refer to Dr. Jones, and book patient review in 6 weeks.</p>
+                        </div>
+                        <div class="border-t border-gray-700 pt-3 text-sm text-gray-400 space-y-1">
+                            <p><span class="text-green-400">✅</span> Note drafted by Ambient Scribe</p>
+                            <p><span class="text-green-400">✅</span> Referral letter generated</p>
+                            <p><span class="text-green-400">✅</span> Follow-up task created for reception</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-
-        <div class="space-y-12 md:space-y-16">
-
-            <!-- Input Layer: The Command Centre -->
-            <div class="fade-in delay-3">
-                <h2 class="text-center text-2xl font-semibold text-white mb-4">The Human Interface</h2>
-                <div class="max-w-2xl mx-auto glass-panel rounded-xl p-4 shadow-lg flex items-center space-x-4 border-cyan-500/30">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400 h-8 w-8 flex-shrink-0"><path d="M10 14l-4 4m0 0l4-4m-4 4h14m-5-4v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4m10 0v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"></path></svg>
-                    <p class="text-lg text-gray-300 flex-grow font-mono">
-                        <span class="text-gray-500">></span> Move Mrs. Ali to Tue 10am & bill Bupa
-                    </p>
-                    <div class="text-sm text-gray-400 bg-gray-800/50 px-2 py-1 rounded-md border border-gray-700">⌘K</div>
+        <!-- You Control the Autonomy -->
+        <section class="mb-12 md:mb-20 fade-in delay-4">
+             <h2 class="text-center text-3xl font-bold text-white mb-8">You Control the Autonomy</h2>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-panel p-6 rounded-xl">
+                    <h3 class="font-semibold text-white text-lg">Command-Only</h3>
+                    <p class="mt-2 text-gray-400 text-sm">The default for sensitive tasks. Agents only act on your direct, typed instructions.</p>
                 </div>
-                <p class="text-center mt-2 text-gray-500 text-sm">One sentence replaces five screens of work.</p>
-            </div>
-
-            <!-- Core System -->
-            <div class="relative flex flex-col items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-                
-                <div class="relative w-full max-w-md mt-4 fade-in delay-4">
-                    <div class="absolute inset-0 bg-cyan-500/20 rounded-full blur-3xl"></div>
-                    <div class="relative glass-panel rounded-full aspect-square flex flex-col items-center justify-center text-center p-8 shadow-2xl pulse">
-                        <h3 class="text-2xl font-bold text-white">AI-Native Core</h3>
-                        <p class="text-cyan-300 font-semibold mt-1">Event-Driven Architecture</p>
-                        <p class="text-gray-400 mt-4 text-sm max-w-xs">
-                            One platform, one login. All agents listen to the "Live Activity Feed" and work together in real-time.
-                        </p>
-                    </div>
+                <div class="glass-panel p-6 rounded-xl">
+                    <h3 class="font-semibold text-white text-lg">Always-On</h3>
+                    <p class="mt-2 text-gray-400 text-sm">For low-risk background work like filling empty slots from a waitlist or re-ordering stock.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl">
+                    <h3 class="font-semibold text-white text-lg">Autopilot Toggle</h3>
+                    <p class="mt-2 text-gray-400 text-sm">Schedule windows where agents take over completely, like an AI phone bot answering calls after hours.</p>
                 </div>
             </div>
-
-            <!-- AI Agents Layer -->
-            <div class="relative mt-12 md:mt-16">
-                <h2 class="text-center text-2xl font-semibold text-white mb-2 fade-in delay-5">Your Digital Coworkers</h2>
-                <p class="text-center text-cyan-400 mb-8 fade-in delay-5">A Unified Team, Live from Day 1</p>
-                
-                <svg class="absolute inset-0 w-full h-full opacity-20 hidden md:block" width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="none">
-                    <path d="M600 0 V 220" stroke="url(#grad1)" stroke-width="2" class="arrow-path" />
-                    <path d="M600 600 V 380" stroke="url(#grad1)" stroke-width="2" class="arrow-path" />
-                    <path d="M0 300 H 520" stroke="url(#grad1)" stroke-width="2" class="arrow-path" />
-                    <path d="M1200 300 H 680" stroke="url(#grad1)" stroke-width="2" class="arrow-path" />
-                    <defs>
-                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:0" />
-                            <stop offset="50%" style="stop-color:#22d3ee;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 relative z-10">
-                    <!-- Agent Cards -->
-                    <div class="glass-panel p-6 rounded-xl text-center fade-in delay-6">
-                        <div class="mx-auto bg-cyan-900/50 h-12 w-12 rounded-full flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
-                        <h4 class="font-semibold text-lg mt-4 text-white">Reception Agent</h4>
-                        <p class="text-gray-400 text-sm mt-2">Answers calls 24/7, books appointments, and handles FAQs.</p>
-                    </div>
-                    <div class="glass-panel p-6 rounded-xl text-center fade-in delay-7">
-                        <div class="mx-auto bg-cyan-900/50 h-12 w-12 rounded-full flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 6v6l4 2"/></svg></div>
-                        <h4 class="font-semibold text-lg mt-4 text-white">Collections Agent</h4>
-                        <p class="text-gray-400 text-sm mt-2">Sends automated, polite reminders for unpaid invoices.</p>
-                    </div>
-                    <div class="glass-panel p-6 rounded-xl text-center fade-in delay-8">
-                        <div class="mx-auto bg-cyan-900/50 h-12 w-12 rounded-full flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><path d="M11 11L2 22"></path></svg></div>
-                        <h4 class="font-semibold text-lg mt-4 text-white">Scribe Agent</h4>
-                        <p class="text-gray-400 text-sm mt-2">Transcribes consultations and drafts SOAP notes for review.</p>
-                    </div>
-                    <div class="glass-panel p-6 rounded-xl text-center fade-in delay-9">
-                        <div class="mx-auto bg-cyan-900/50 h-12 w-12 rounded-full flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div>
-                        <h4 class="font-semibold text-lg mt-4 text-white">Briefing Agent</h4>
-                        <p class="text-gray-400 text-sm mt-2">Delivers a daily one-page digest for each clinician.</p>
-                    </div>
+             <p class="text-center mt-6 text-gray-500">Start in Command-Only, watch trust build, then graduate your digital coworkers to Autopilot.</p>
+        </section>
+        
+        <!-- Intelligent Orchestrator Section -->
+        <section class="mb-12 md:mb-20 fade-in delay-5">
+            <h2 class="text-center text-3xl font-bold text-white mb-8">The Intelligent Orchestrator</h2>
+            <p class="text-center text-gray-400 max-w-3xl mx-auto mb-10">Data Ravens doesn't replace your essential tools; it makes them work together. Our system acts as the central brain for your entire tech stack.</p>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                <div class="flex flex-col items-center">
+                    <div class="bg-cyan-900/50 h-16 w-16 rounded-full flex items-center justify-center border-2 border-cyan-500/50"><p class="text-cyan-400 font-bold text-xl">1</p></div>
+                    <p class="font-semibold text-white mt-4">Event Trigger</p>
+                    <p class="text-sm text-gray-500 mt-1">Our system signals a key event, like "Consultation Ended".</p>
+                </div>
+                 <div class="flex flex-col items-center">
+                    <div class="bg-gray-800 h-16 w-16 rounded-full flex items-center justify-center"><p class="text-gray-400 font-bold text-xl">2</p></div>
+                    <p class="font-semibold text-white mt-4">Partner Activation</p>
+                    <p class="text-sm text-gray-500 mt-1">We securely "ping" your specialist tool (e.g., an AI Scribe).</p>
+                </div>
+                 <div class="flex flex-col items-center">
+                    <div class="bg-gray-800 h-16 w-16 rounded-full flex items-center justify-center"><p class="text-gray-400 font-bold text-xl">3</p></div>
+                    <p class="font-semibold text-white mt-4">Task Execution</p>
+                    <p class="text-sm text-gray-500 mt-1">The partner tool does its job and sends a "Draft Done!" signal back.</p>
+                </div>
+                 <div class="flex flex-col items-center">
+                    <div class="bg-gray-800 h-16 w-16 rounded-full flex items-center justify-center"><p class="text-gray-400 font-bold text-xl">4</p></div>
+                    <p class="font-semibold text-white mt-4">Workflow Continues</p>
+                    <p class="text-sm text-gray-500 mt-1">Our system receives the signal, files the note, and continues the workflow.</p>
                 </div>
             </div>
+        </section>
 
-            <!-- Outcomes Layer -->
-            <div class="mt-12 md:mt-20 border-t border-gray-800 pt-12">
-                <h2 class="text-center text-2xl font-semibold text-white mb-8 fade-in delay-10">The Outcomes</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                    <div class="bg-gray-900/50 p-8 rounded-xl text-center border border-gray-800 fade-in delay-10">
-                        <h3 class="text-xl font-semibold text-cyan-400">For Clinicians</h3>
-                        <p class="mt-2 text-gray-300">More time for clinical reasoning and patient care, less time on administrative drudgery.</p>
-                    </div>
-                    <div class="bg-gray-900/50 p-8 rounded-xl text-center border border-gray-800 fade-in delay-10">
-                        <h3 class="text-xl font-semibold text-cyan-400">For Staff</h3>
-                        <p class="mt-2 text-gray-300">Reduced repetitive workload, fewer errors, and relief from stressful tasks like chasing payments.</p>
-                    </div>
-                    <div class="bg-gray-900/50 p-8 rounded-xl text-center border border-gray-800 fade-in delay-10">
-                        <h3 class="text-xl font-semibold text-cyan-400">For the Clinic</h3>
-                        <p class="mt-2 text-gray-300">Improved cash flow, higher schedule utilization, and a scalable, future-proof operating model.</p>
-                    </div>
+        <!-- Why It Matters Section -->
+        <section class="mb-12 md:mb-20 fade-in delay-6">
+            <h2 class="text-center text-3xl font-bold text-white mb-8">Why It Matters: From Solo Room to National Chain</h2>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-panel p-6 rounded-xl text-center">
+                    <h3 class="font-semibold text-white text-lg">Solo / One-Site</h3>
+                    <p class="text-cyan-400 text-2xl font-bold mt-2">Time Windfall</p>
+                    <p class="mt-2 text-gray-400 text-sm">Frees up significant admin time, allowing a small team to achieve more.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl text-center">
+                    <h3 class="font-semibold text-white text-lg">2–5 Sites</h3>
+                    <p class="text-cyan-400 text-2xl font-bold mt-2">Consistency</p>
+                    <p class="mt-2 text-gray-400 text-sm">Standardises workflows, improving cash flow and reducing errors across locations.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl text-center">
+                    <h3 class="font-semibold text-white text-lg">10+ Sites / Roll-Up</h3>
+                    <p class="text-cyan-400 text-2xl font-bold mt-2">Rapid Change at Scale</p>
+                    <p class="mt-2 text-gray-400 text-sm">Deploys operational changes, like new insurer rules, across all sites in days, not months.</p>
                 </div>
             </div>
+        </section>
 
-            <!-- Pilot Application Form -->
-            <section class="mt-12 md:mt-20 border-t border-gray-800 pt-12 fade-in delay-11">
-                <div class="max-w-2xl mx-auto glass-panel p-8 rounded-2xl">
-                    <h2 class="text-2xl font-bold text-center text-white mb-6">Apply to Join the Pilot</h2>
-                    <form id="pilotForm" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
-                            <input type="text" id="name" name="name" class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition">
-                        </div>
-                        <div>
-                            <label for="role" class="block text-sm font-medium text-gray-300 mb-2">Role</label>
-                            <input type="text" id="role" name="role" class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                            <input type="email" id="email" name="email" class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition">
-                        </div>
-                        <div>
-                            <label for="interest" class="block text-sm font-medium text-gray-300 mb-2">Why are you interested?</label>
-                            <select id="interest" name="interest" class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition appearance-none" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%239ca3af%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 0.65em auto;">
-                                <option>Looking to test a new system</option>
-                                <option>Want to discuss an investment opportunity</option>
-                                <option>Wish to discuss your software</option>
-                                <option>Want to work for Data Ravens</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div class="pt-2">
-                            <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">Submit Application</button>
-                        </div>
-                    </form>
-                    <div id="form-message" class="text-center mt-4 text-green-400 font-semibold"></div>
-                </div>
-            </section>
-
-        </div>
+        <!-- Pilot Application Form -->
+        <section class="mt-12 md:mt-20 border-t border-gray-800 pt-12 fade-in delay-7">
+            <div class="max-w-2xl mx-auto glass-panel p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-center text-white mb-6">Apply to Join the Pilot</h2>
+                <form id="pilotForm" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label for="role" class="block text-sm font-medium text-gray-300 mb-2">Role</label>
+                        <input type="text" id="role" name="role" class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition">
+                    </div>
+                    <div>
+                        <label for="interest" class="block text-sm font-medium text-gray-300 mb-2">Why are you interested?</label>
+                        <select id="interest" name="interest" class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition appearance-none" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%27292.4%27%20height=%27292.4%27%3E%3Cpath%20fill=%27%239ca3af%27%20d=%27M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%27/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 0.65em auto;">
+                            <option>Looking to test a new system</option>
+                            <option>Want to discuss an investment opportunity</option>
+                            <option>Wish to discuss your software</option>
+                            <option>Want to work for Data Ravens</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="pt-2">
+                        <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">Submit Application</button>
+                    </div>
+                </form>
+                <div id="form-message" class="text-center mt-4 text-green-400 font-semibold"></div>
+            </div>
+        </section>
 
         <!-- Footer with Logos -->
-        <footer class="mt-16 md:mt-24 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-center items-center gap-8 fade-in delay-11">
-            <p class="text-gray-500 text-sm">In partnership with:</p>
+        <footer class="mt-16 md:mt-24 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-center items-center gap-8 fade-in delay-8">
+            <p class="text-gray-500 text-sm">Certified by:</p>
             <div class="flex items-center gap-12">
-                 <img src="UCL Endorsement Logo.png" alt="UCL Endorsement Logo" class="h-16" style="filter: invert(1) brightness(1.5);">
-                 <img src="cyber essentials logo.png" alt="Cyber Essentials Logo" class="h-20">
+                 <img src="cyber essentials logo.png" alt="Cyber Essentials Logo" class="h-16" onerror="this.onerror=null;this.src='https://placehold.co/200x64/0D1117/FFFFFF?text=Cyber+Essentials';">
             </div>
         </footer>
 
